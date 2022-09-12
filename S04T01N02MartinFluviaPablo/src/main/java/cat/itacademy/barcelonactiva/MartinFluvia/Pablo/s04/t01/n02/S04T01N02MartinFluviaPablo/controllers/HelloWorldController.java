@@ -18,7 +18,8 @@ public class HelloWorldController {
     @GetMapping("/HelloWorld")
     public String saluda(@RequestParam(value = "nom", defaultValue = "UNKNOWN") String nom){        
         msg = "Hola, " + nom + ". Estàs executant un projecte Gradle";
-        LOG.info("Reacting to estàs get HelloWorld");
+        LOG.info("Reacting to get HelloWorld.");
+        testAccent();
         return msg;
     }
     
@@ -26,6 +27,11 @@ public class HelloWorldController {
     public String saluda2(@PathVariable(required=false) String nom){
         msg = "Hola, " + nom + ". Estàs executant un projecte Gradle";
         LOG.info("Reacting to get HelloWorld2");
+        testAccent();
         return msg;
+    }
+    
+    private void testAccent(){
+        LOG.info("Test dels accents:´á`sòí");
     }
 }
